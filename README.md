@@ -1,6 +1,7 @@
 # harurow-ejdict
 
-https://travis-ci.org/Harurow/EJDict.svg?branch=master
+[![Build Status](https://travis-ci.org/Harurow/EJDict.svg?branch=master)](https://travis-ci.org/Harurow/EJDict)
+
 
 - これはパブリックドメインの英和辞書データです。
 - This is the English-Japanese Dictionary data (Public Domain).
