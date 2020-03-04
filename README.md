@@ -1,7 +1,7 @@
 # harurow-ejdict
 
 [![Build Status](https://travis-ci.org/Harurow/EJDict.svg?branch=master)](https://travis-ci.org/Harurow/EJDict)
-
+[![codecov](https://codecov.io/gh/Harurow/EJDict/branch/master/graph/badge.svg)](https://codecov.io/gh/Harurow/EJDict)
 
 - これはパブリックドメインの英和辞書データです。
 - This is the English-Japanese Dictionary data (Public Domain).
@@ -42,3 +42,19 @@ export declare function reverseLookUp(query: string, limit?: number): {
     description: string;
 }[];
 ```
+
+### 英/日
+
+```typescript
+/**
+ * 辞書を検索します
+ * index と description の両方を検索します
+ * @param query 検索したい意味. スペースでAND検索
+ * @param limit 最大検索数. デフォルト 10
+ */
+export declare function match(query: string, limit?: number): {
+    index: string;
+    description: string;
+}[];
+```
+

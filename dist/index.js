@@ -34,3 +34,23 @@ function reverseLookUp(query, limit) {
         .map(function (items) { return ({ index: items[0], description: items[1] }); });
 }
 exports.reverseLookUp = reverseLookUp;
+/**
+ * 辞書を検索します
+ * index と description の両方を検索します
+ * @param query 検索したい意味. スペースでAND検索
+ * @param limit 最大検索数. デフォルト 10
+ */
+function match(query, limit) {
+    if (limit === void 0) { limit = 10; }
+    var queryUpper = query.toUpperCase();
+    var condition = function (index, desc) {
+        return queryUpper
+            .split(' ')
+            .every(function (q) { return index.indexOf(q) !== -1 || desc.indexOf(q) !== -1; });
+    };
+    return dic_1.dic
+        .filter(function (items) { return condition(items[0].toUpperCase(), items[1].toUpperCase()); })
+        .filter(function (_, no) { return no < limit; })
+        .map(function (items) { return ({ index: items[0], description: items[1] }); });
+}
+exports.match = match;

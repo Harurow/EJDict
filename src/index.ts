@@ -30,3 +30,21 @@ export function reverseLookUp (query: string, limit: number = 10): { index: stri
         .filter((_, no) => no < limit)
         .map(items => ({ index: items[0], description: items[1] }))
 }
+
+/**
+ * 辞書を検索します
+ * index と description の両方を検索します
+ * @param query 検索したい意味. スペースでAND検索
+ * @param limit 最大検索数. デフォルト 10
+ */
+export function match (query: string, limit: number = 10): { index: string, description: string }[] {
+    const queryUpper = query.toUpperCase()
+    const condition = (index: string, desc: string) => 
+        queryUpper
+            .split(' ')
+            .every(q => index.indexOf(q) !== -1 || desc.indexOf(q) !== -1)
+    return dic
+        .filter((items) => condition(items[0].toUpperCase(), items[1].toUpperCase()))
+        .filter((_, no) => no < limit)
+        .map(items => ({ index: items[0], description: items[1] }))
+}

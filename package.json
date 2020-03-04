@@ -1,6 +1,6 @@
 {
   "name": "harurow-ejdict",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "ejdict",
   "description": "- これはパブリックドメインの英和辞書データです。 - This is the English-Japanese Dictionary data (Public Domain).",
   "author": "Harurow",
@@ -19,8 +19,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "jest",
-    "test-coverage": "jest --collect-coverage",
+    "test": "jest --collect-coverage",
     "conv": "node ./scripts/convert.js",
     "build": "tsc -p tsconfig.json",
     "pack": "npm pack",
