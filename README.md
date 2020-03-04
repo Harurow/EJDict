@@ -1,45 +1,41 @@
-# English-Japanese Dictionary "ejdic-hand"
+# harurow-ejdict
 
 - これはパブリックドメインの英和辞書データです。
 - This is the English-Japanese Dictionary data (Public Domain).
 
-## 間違いを見つけたら？
+## 謝辞
 
-- 気軽にプルリクエストください。あるいは、メールにて修正点をお伝えください。
-- よく分からなくても、間違いを見つけたら、気軽に、メールにて、クジラ飛行机<web@kujirahnad.com> までお知らせください。
+クジラ飛行机様のデータを利用させていただいています
+http://kujirahand.com/
+https://github.com/kujirahand/EJDict
 
-## ダウンロード
 
-以下、くじらはんどのWebサイトにてテキスト形式、SQLite形式のデータをダウンロードできます。
+## 使い方
 
-- http://kujirahand.com/web-tools/EJDictFreeDL.php
+### 英➡️日
 
-## フォーマット
-
-- src ディレクトリに、アルファベットフォトのテキストデータがあります。
-- release ディレクトリのものは、srcディレクトリのファイルを結合しソートしたものです。
-
-各辞書のデータは、次のような形式になっています。
-
-```
-英単語1 \t 意味1
-英単語2 \t 意味2
-英単語3 \t 意味3
-...
+```typescript
+/**
+ * 辞書を検索します
+ * @param index 検索したい英単語の一部分
+ * @param limit 最大検索数. デフォルト 10
+ */
+function lookUp(index: string, limit?: number): {
+    index: string;
+    description: string;
+}[]
 ```
 
-ただし、意味が同じで綴りが少し異なるだけの単語は、カンマで区切って列挙されます。
+### 日➡️英
 
+```typescript
+/**
+ * 辞書を逆引きします
+ * @param query 検索したい意味. スペースでAND検索
+ * @param limit 最大検索数. デフォルト 10
+ */
+export declare function reverseLookUp(query: string, limit?: number): {
+    index: string;
+    description: string;
+}[];
 ```
-英単語, 英単語, 英単語 \t 意味
-```
-
-## ツール
-
-```sh
-# アルファベットごとに分割された辞書データを一つにまとめる
-$ php tools/join-files.php
-
-# 辞書データをSQLite形式のDBに変換する
-$ php tools/tosqlite.php
-````
