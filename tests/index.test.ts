@@ -1,4 +1,4 @@
-import { lookUp, reverseLookUp } from '../src/index'
+import { lookUp, reverseLookUp, match } from '../src/index'
 
 describe('lookUp', () => {
     test('camellia', () => {
@@ -8,6 +8,10 @@ describe('lookUp', () => {
     test('llia', () => {
         const founds = lookUp('llia')
         expect(founds.length).toBe(10)
+    })
+    test('llia', () => {
+        const founds = lookUp('llia', 11)
+        expect(founds.length).toBe(11)
     })
 })
 
@@ -30,8 +34,23 @@ describe('reverseLookUp', () => {
 
 describe('match', () => {
     test('less ', () => {
-        const founds = reverseLookUp('less 国', 100)
+        const founds = match('less 国', 100)
+        console.log(founds)
+        expect(founds.length).toBe(3)
+    })
+    test('less ', () => {
+        const founds = match('less 国', 2)
+        console.log(founds)
+        expect(founds.length).toBe(2)
+    })
+    test('camellia', () => {
+        const founds = match('camellia', 1)
         console.log(founds)
         expect(founds.length).toBe(1)
+    })
+    test('検索されない', () => {
+        const founds = match('検索されない', 100)
+        console.log(founds)
+        expect(founds.length).toBe(0)
     })
 })

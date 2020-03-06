@@ -2,7 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var dic_1 = require("./dic");
 /**
- * 辞書を検索します
+ * 辞書を検索します。
+ * 索引の部分一致検索を行います。
+ *
  * @param index 検索したい英単語の一部分
  * @param limit 最大検索数. デフォルト 10
  */
@@ -16,8 +18,10 @@ function lookUp(index, limit) {
 }
 exports.lookUp = lookUp;
 /**
- * 辞書を逆引きします
- * @param query 検索したい意味. スペースでAND検索
+ * 辞書を逆引きします。
+ * 説明の部分一致検索を行います。
+ *
+ * @param query 検索したい意味。 スペース区切りでAND検索を行う。
  * @param limit 最大検索数. デフォルト 10
  */
 function reverseLookUp(query, limit) {
@@ -35,9 +39,10 @@ function reverseLookUp(query, limit) {
 }
 exports.reverseLookUp = reverseLookUp;
 /**
- * 辞書を検索します
- * index と description の両方を検索します
- * @param query 検索したい意味. スペースでAND検索
+ * 辞書を検索します。
+ * 索引、説明のいずれに部分一致で検索します。
+ *
+ * @param query 検索したい文字列。 スペース区切りでAND検索を行う。
  * @param limit 最大検索数. デフォルト 10
  */
 function match(query, limit) {
