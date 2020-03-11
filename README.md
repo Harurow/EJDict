@@ -1,5 +1,6 @@
 # harurow-ejdict
 
+[![Build Status](https://dev.azure.com/motoharucamellia/EJDict/_apis/build/status/Harurow.EJDict?branchName=master)](https://dev.azure.com/motoharucamellia/EJDict/_build/latest?definitionId=2&branchName=master)
 [![Build Status](https://travis-ci.org/Harurow/EJDict.svg?branch=master)](https://travis-ci.org/Harurow/EJDict)
 [![codecov](https://codecov.io/gh/Harurow/EJDict/branch/master/graph/badge.svg)](https://codecov.io/gh/Harurow/EJDict)
 
