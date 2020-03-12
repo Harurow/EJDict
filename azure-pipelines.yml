@@ -27,3 +27,12 @@ steps:
     npm run build
   displayName: 'npm build'
 
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/cobertura-coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
+
+- task: Npm@1
+  inputs:
+    command: 'publish'
