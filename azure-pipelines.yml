@@ -36,4 +36,6 @@ steps:
 - task: Npm@1
   inputs:
     command: 'publish'
-    publishEndpoint: 'harurow-ejdict'
+    workingDir: './'
+    publishRegistry: 'useFeed'
+    publishFeed: '61b9cd90-faa2-4a20-8c5a-07c1f385ebc7'
