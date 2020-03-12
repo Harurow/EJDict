@@ -1,6 +1,6 @@
 {
-  "name": "@harurow/ejdict",
-  "version": "1.1.1",
+  "name": "harurow-ejdict",
+  "version": "1.1.2",
   "displayName": "ejdict",
   "description": "English / Japanese dictionary",
   "author": "Harurow",
@@ -22,6 +22,7 @@
     "test": "jest --collect-coverage",
     "conv": "node ./scripts/convert.js",
     "build": "tsc -p tsconfig.json",
+    "version": "standard-version",
     "pack": "npm pack",
     "-- works --": "",
     "prebuild": "npm run conv",
