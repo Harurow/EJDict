@@ -10,8 +10,6 @@
     "^.+\\.(ts|tsx)$": "ts-jest"
   },
   "coverageReporters": [
-    "text",
-    "html",
     "cobertura"
   ]
 }
