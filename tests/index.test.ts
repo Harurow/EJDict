@@ -13,6 +13,16 @@ describe('lookUp', () => {
         const founds = lookUp('llia', 11)
         expect(founds.length).toBe(11)
     })
+    test('two', () => {
+        const founds = lookUp('two', 10)
+        console.log(founds)
+        expect(founds.length).toBe(10)
+    })
+    test('two', () => {
+        const founds = lookUp('two', 50)
+        console.log(founds)
+        expect(founds.length).toBe(39)
+    })
 })
 
 describe('reverseLookUp', () => {
@@ -26,19 +36,19 @@ describe('reverseLookUp', () => {
         expect(founds.length).toBe(100)
     })
 
-    test('学 校', () => {
+    test('校 学', () => {
         const founds = reverseLookUp('校 学', 100)
         expect(founds.length).toBe(100)
     })
 })
 
 describe('match', () => {
-    test('less ', () => {
+    test('less 国', () => {
         const founds = match('less 国', 100)
         console.log(founds)
-        expect(founds.length).toBe(3)
+        expect(founds.length).toBe(9)
     })
-    test('less ', () => {
+    test('less 国', () => {
         const founds = match('less 国', 2)
         console.log(founds)
         expect(founds.length).toBe(2)

@@ -22,12 +22,12 @@ const convert = (f, wstrm) => {
 fs.readdir(srcDir, (err, files) => {
     if (err) throw err;
 
-    const wstrm = fs.createWriteStream('./src/dic.ts', {
+    const wstrm = fs.createWriteStream('./src/dict.ts', {
         encoding: 'utf8', flags: 'w'
     })
 
     try {
-        wstrm.write('export const dic: string[][] = [\n')
+        wstrm.write('export const dict: string[][] = [\n')
 
         files.map(f => path.join(srcDir, f))
             .filter(f => isSourceFile(f))
